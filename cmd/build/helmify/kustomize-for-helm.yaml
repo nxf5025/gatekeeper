@@ -68,6 +68,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.release }}"
           resources: HELMSUBST_DEPLOYMENT_CONTROLLER_MANAGER_CONTAINER_RESOURCES
       nodeSelector: HELMSUBST_DEPLOYMENT_POD_SCHEDULING
+      imagePullSecrets: HELMSUBST_IMAGEPULLSECRETS
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -95,3 +96,5 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.release }}"
           resources: HELMSUBST_DEPLOYMENT_AUDIT_CONTAINER_RESOURCES
       nodeSelector: HELMSUBST_DEPLOYMENT_POD_SCHEDULING
+      imagePullSecrets: HELMSUBST_IMAGEPULLSECRETS
+
